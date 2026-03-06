@@ -9,22 +9,20 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Backend is running");
+  res.send("Hi Shivendu, how are you ");
 });
 
 app.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  // basic validation
   if (!email || !password) {
     return res.status(400).json({
       message: "Email and password are required",
     });
   }
 
-  // fake authentication (for now)
-  if (email === "vibhorkapoor123@gmail.com" && password === "vib@123") {
+  if (email === "shivendu0103@gmail.com" && password === "Shivendu@123") {
     return res.json({
       success: true,
       message: "Login successful",
